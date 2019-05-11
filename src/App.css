@@ -1,33 +1,142 @@
-.App {
-  text-align: center;
+::selection {
+  background-color: #BFBFBF;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+html {
+  height: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body {
+  position: relative;
+  background-color: #F2C12E;
+  min-height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.rdt-wrapper {
+  position: relative;
+	min-height: 100%;
+}
+.rdt-wrapper::after {
+  content: '';
+  display: block;
+  height: 75px; /* Set same as footer's height */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/*
+|--------------------
+| Nav bar
+|--------------------
+*/
+
+.navbar .navbar-nav .nav-link {
+  font-family: 'Roboto';
+  font-size: 16px;
+  color: #010326;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+  font-weight: 700;
+}
+
+@media (min-width: 576px) {
+
+  .navbar .navbar-nav .nav-link {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: bold;
+    color: #010326;
   }
-  to {
-    transform: rotate(360deg);
+
+  .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    /* color: #010326; */
+    border-bottom: 4px solid #010326;
+  }
+
+}
+
+/*
+|--------------------
+| Main content
+|--------------------
+*/
+
+h1.rdt-heading {
+  font-family: 'Bungee Inline';
+  font-size: 50px;
+  color: #010326;
+}
+h2.rdt-subheading {
+  /* font-family: 'Roboto'; */
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 14px;
+  color: #010326;
+}
+  h2.rdt-subheading:before {
+    content: "<";
+  }
+  h2.rdt-subheading:after {
+    content: ">";
+  }
+p.rdt-body-text {
+  font-family: 'Roboto';
+  font-size: 14px;
+  color: #010326;
+}
+p.rdt-code-text {
+  font-size: 20px;
+}
+
+/*
+|--------------------
+| Resume
+|--------------------
+*/
+
+.rdt-resume {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+.rdt-resume .rdt-resume-role {
+  font-weight: 700;
+}
+
+/*
+|--------------------
+| Photos
+|--------------------
+*/
+
+.ig-photos-container {
+  margin: 0 -15px;
+}
+.ig-photos-container > div {
+  flex: 100%;
+  padding: 15px;
+}
+@media (min-width: 576px) {
+  .ig-photos-container > div {
+    flex: 33.33%;
+    padding: 15px;
   }
 }
+.ig-photos-container div img {
+  max-width: 100%;
+}
+
+/*
+|--------------------
+| Footer
+|--------------------
+*/
+
+.rdt-page-footer-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 75px;
+}
+  .rdt-page-footer {
+    padding-top: 35px;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-size: 12px;
+  }
